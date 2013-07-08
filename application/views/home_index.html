@@ -1,0 +1,15 @@
+{% extends "application.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block container %}
+<h3>Upload Images</h3>
+<form method="post" action="home/upload" enctype="multipart/form-data">
+    <p><span>Front image: </span><input type="file" name="file1" /></p>
+    <p><span>Back image: </span><input type="file" name="file2" /></p>
+    <button type="submit" class="btn btn-danger">
+        <i class="icon-plus"></i>
+        Upload
+    </button>
+</form>
+{% endblock %}

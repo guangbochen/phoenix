@@ -1,0 +1,6 @@
+{
+    "require": {
+        "twig/twig": "v1.13.1",
+        "raveren/kint": "dev-master"
+    }
+}

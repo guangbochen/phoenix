@@ -1,0 +1,19 @@
+{% extends "application.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block container %}
+<br/>
+<h3>Crop Image</h3>
+
+<img src="/assets/{{ image_name }}" width="800" height="620" id="target" alt="[Jcrop Example]" />
+<br/>
+<form action="do_crop" method="post" id="crop-form">
+    <input type="hidden" id="image_name" name="image_name" value="{{ image_name }}" />
+    <input type="hidden" id="x" name="x" />
+    <input type="hidden" id="y" name="y" />
+    <input type="hidden" id="w" name="w" />
+    <input type="hidden" id="h" name="h" />
+    <input type="submit" value="Crop Image" class="btn btn-large btn-danger" />
+</form>
+{% endblock %}
