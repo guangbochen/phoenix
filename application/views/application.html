@@ -2,21 +2,64 @@
 <html lang="en">
 <head>
     <title>{% block title %}{% endblock %}</title>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width"> 
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
-    <link href="/css/jquery.Jcrop.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
+    <link href="/phoenix/css/mystyle.css" rel="stylesheet">
 </head>
 <body>
 
     <div class="container">
         <div class="page">
-            {% block container %}{% endblock %}</div>
+
+            <div class="navbar navbar-inverse navbar-fixed-top">
+              <div class="navbar-inner">
+                <div class="container">
+                  <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="brand" href="index.html">
+                      <div id="brand_font"> Phoenix International Express</div>
+                  </a>
+                  <div class="nav-collapse collapse">
+                    <ul class="nav">
+                      <li><a href="#contact">Cargo Services</a></li>
+                      <li><a href="#contact">Express Services</a></li>
+                      <li><a href="#New">News</a></li>
+                      <li><a href="#about">About us</a></li>
+                      <li><a href="#contact">Contact us</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% block container %}
+
+            
+            
+            {% endblock %}
+            <hr>
+            <div class="footer">
+                <div class="sub-footer-links">
+                    <ul>
+                        <li><a href="#contact">Home</li>
+                        <li><a href="#about">About our site</a></li>
+                        <li><a href="#contact">Terms & conditions</a></li>
+                        <li><a href="#New">Privacy policy</a></li>
+                    </ul>
+                </div>
+                <div id="footer_comm">
+                    <p>&copy; PHOENIX INTERNATIONAL CARGO PTY LTD, 2013</p>
+                </div>
+            </div>
+            
         </div>
-    </div>
+    </div> <!--end of container-->
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -40,3 +83,4 @@
     </script>
 </body>
 </html>
+

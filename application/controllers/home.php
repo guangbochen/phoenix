@@ -11,6 +11,12 @@ class Home extends CI_Controller {
 	function index()
 	{
         echo twig_render('home_index.html');
+        //echo twig_render('home_index.html');
+   }
+
+	function client()
+	{
+        echo twig_render('app_index.html');
 	}
 
     function upload()

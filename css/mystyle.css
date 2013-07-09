@@ -1,0 +1,21 @@
+body
+{
+    height:auto;
+    width:auto;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:60px;
+}
+#brand_font
+{
+    color:#ffffff;
+}
+/*css for the footer*/
+.footer{width:1024px; margin-left:auto;margin-right:auto}
+.sub-footer-links { float:left; padding:11px 0 0 0; height:24px;font-size:.846em} .sub-footer-links ul { margin:0; padding:0; list-style:none;list-style-image:none }
+.sub-footer-links li { display:inline-block; padding-left:20px; position:relative } .lt-ie8 .sub-footer-links li { display:inline }
+.sub-footer-links li:after { content:""; display:block; width:1px; height:10px; background:#AAA8A6; position:absolute; left:8px; top:5px }
+.sub-footer-links li:first-child { padding-left:0 }
+.sub-footer-links li:first-child:after { content:none; display:none }.sub-footer-links a{color:#444}.sub-footer-links a:visited{color:#444}
+#footer_comm{float:right;padding:11px 0 0 0; height:24px;font-size:.846em}
+ 
