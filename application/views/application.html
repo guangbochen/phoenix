@@ -8,64 +8,58 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
-    <link href="/phoenix/css/mystyle.css" rel="stylesheet">
+    <link href="../css/mystyle.css" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container">
-        <div class="page">
-
-            <div class="navbar navbar-inverse navbar-fixed-top">
-              <div class="navbar-inner">
-                <div class="container">
-                  <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                  </button>
-                  <a class="brand" href="index.html">
-                      <div id="brand_font"> Phoenix International Express</div>
-                  </a>
-                  <div class="nav-collapse collapse">
+                </button>
+                <a class="brand" href="#">
+                    <div id="brand_font"> Phoenix International Express</div>
+                </a>
+                <div class="nav-collapse collapse">
                     <ul class="nav">
-                      <li><a href="#contact">Cargo Services</a></li>
-                      <li><a href="#contact">Express Services</a></li>
-                      <li><a href="#New">News</a></li>
-                      <li><a href="#about">About us</a></li>
-                      <li><a href="#contact">Contact us</a></li>
+                        <li><a href="#contact">Express Services</a></li>
+                        <li><a href="#New">News</a></li>
+                        <li><a href="#AboutUs">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
                     </ul>
-                  </div>
                 </div>
-              </div>
             </div>
-            {% block container %}
+        </div>
+    </div>
+    <!-- END OF NAVBAR
+    ================================================== -->
+    {% block container %}
 
             
-            
-            {% endblock %}
-            <hr>
-            <div class="footer">
-                <div class="sub-footer-links">
-                    <ul>
-                        <li><a href="#contact">Home</li>
-                        <li><a href="#about">About our site</a></li>
-                        <li><a href="#contact">Terms & conditions</a></li>
-                        <li><a href="#New">Privacy policy</a></li>
-                    </ul>
-                </div>
-                <div id="footer_comm">
-                    <p>&copy; PHOENIX INTERNATIONAL CARGO PTY LTD, 2013</p>
-                </div>
-            </div>
-            
-        </div>
-    </div> <!--end of container-->
+    {% endblock %}
+    <!-- FOOTER
+    ================================================== -->
+    <div class="container marketing">
+        <hr class="featurette-divider">
+        <footer>
+        <p class="pull-right"><a href="#">Home page</a></p>
+        <p>&copy; 2013 PHOENIX INTERNATIONAL CARGO PTY LTD. &nbsp;&nbsp; <a href="#">Terms of Use</a> &#124; <a href="#">Privacy</a></p>
+        </footer>
+    </div>
+    <!-- END OF FOOTER
+    ================================================== -->
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.Jcrop.min.js"></script>
-    <script src="/js/imgLiquid-min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="../js/jquery.Jcrop.min.js"></script>
+    <script src="../js/imgLiquid-min.js"></script>
     <script>
         $(".imgLiquidFill").imgLiquid();
 
