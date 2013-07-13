@@ -2,24 +2,30 @@
 
 class Home extends CI_Controller {
 
+    /**
+     * constructor
+     */
 	function __construct()
 	{
 		parent::__construct();
 		$this->load->helper(array('form', 'url'));
 	}
 
+    /**
+     * index page
+     * @return [type] [description]
+     */
     function index()
     {
         //echo twig_render('home_index.html');
         //the index page shows the default page for all users
         echo twig_render('app_index.html');
     }
-	function img()
-	{
-        echo twig_render('home_index.html');
-    }
 
-
+    /**
+     * redirect to trackItems page
+     * @return [type] [description]
+     */
 	function track()
 	{
         //html page to display traking info.
@@ -29,9 +35,26 @@ class Home extends CI_Controller {
         echo twig_render('app_trackItems.html');
 	}
 
+    /**
+     * redirect to upload photo page
+     * @return [type] [description]
+     */
     function upload()
     {
-        $path                    = 'assets/';
+        echo twig_render('app_uploadPhoto.html');
+    }
+
+    /**
+     * redirect to search sub_branches page
+     * @return [type] [description]
+     */
+    function branches()
+    {
+        echo twig_render('app_branches.html');
+    }
+/*
+    function upload()
+    {$path                    = 'assets/';
         $config['upload_path']   = $path;
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size']      = '2048';
@@ -105,4 +128,5 @@ class Home extends CI_Controller {
         
         exit;
     }
+    */
 }
