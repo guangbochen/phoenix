@@ -8,15 +8,25 @@ class Home extends CI_Controller {
 		$this->load->helper(array('form', 'url'));
 	}
 
-	function index()
+    function index()
+    {
+        //echo twig_render('home_index.html');
+        //the index page shows the default page for all users
+        echo twig_render('app_index.html');
+    }
+	function img()
 	{
         echo twig_render('home_index.html');
-        //echo twig_render('home_index.html');
-   }
+    }
 
-	function client()
+
+	function track()
 	{
-        echo twig_render('app_index.html');
+        //html page to display traking info.
+        // $trackingid = $_POST['trackingID'];
+        // $data ['trackid'] = $trackingid;
+        // echo twig_render('app_trackItems.html',$data);
+        echo twig_render('app_trackItems.html');
 	}
 
     function upload()

@@ -1,0 +1,174 @@
+{% extends "application.html" %} 
+{% block title %} Home {% endblock %}
+{% block container %}
+<div class="container marketing">
+    <div id="Top_Page"></div>
+
+    <div class="row-fluid">
+        <!-- Left Top Marketing messaging Container
+        ================================================== -->
+        <div class="span8">
+	        <div class="myborder">
+                <div class="tab-content"> 
+                    <!-- Track your items
+                    ================================================== -->
+                    <div class="tab-pane active" id="trackItems">
+        	        	<p><a href="index">Home</a> > Track your item</p>
+        	        	<hr>
+        	        	<h1>Track your item</h1>
+                        <div class="errors">
+                            <ul><li>Please enter a tracking ID</li></ul>
+                        </div>
+        	        	<p>Please enter your tracking number without any spaces or dashes.</p>
+        	        	<form>
+        	        	<textarea rows="4" class="field span6" id="trackingId" placeholder="Tracking number..."></textarea>
+        	        	<p>
+        				  <button class="btn btn-danger" type="button" id="searchID">Search</button>
+        				</p>
+        				</form>
+        	        	<!-- <input id="hide" type="button" value="Hide" />    -->
+        				<!-- <input id="show" type="button" value="Show" /> -->
+                    </div>
+                    <!-- Upload Photos
+                    ================================================== -->
+                    <div class="tab-pane" id="uploadPhotos">
+                        <p><a href="index">Home</a> > Upload Photos</p>
+                        <hr>
+                        <h1>Upload Photots</h1>
+                        <h4>Dear Customer:</h4>
+                        <p>Please fill in the following information and remains consistent with the identity photo you upload.</p>
+                        <form method="post" action="home/upload" enctype="multipart/form-data">
+                            <table>
+                                <tr> <td>Tracking ID: </td> <td><input type="text"></td> </tr>
+                                <tr> <td>Name: </td> <td><input type="text"></td> </tr>
+                                <tr> <td>Identity Card Number: </td> <td><input type="text"></td> </tr>
+                                <tr> <td> <p><span>Front side: </span></td> 
+                                <td> <input type="file" name="file1" /></p> </td>
+                                </tr>
+                                <tr>
+                                <td> <p><span>Back side: </span></td>
+                                <td><input type="file" name="file2" /></p></td>
+                                </tr>
+                                <tr>
+                                <td> <button type="submit" class="btn btn-danger"> 
+                                <i class="icon-plus"></i> Upload </button>
+                                </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <!-- Find our Subranches
+                    ================================================== -->
+                    <div class="tab-pane" id="findUs">
+                        <p><a href="index">Home</a> > Find us</p>
+                        <hr>
+                        <h1>Find our subbranches</h1><br>
+                        <h3>Head Office</h3>
+                        <p><strong>Address:</strong> 17/620-632 Botany Rd, Alexandria NSW2015 NSW</p>
+                        <p><strong>Contact Us：</strong>83391900/0411459758</p>
+                        <hr>
+                        <h4>Subbraches</h4>
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Location</th>
+                                <th>Stores</th>
+                                <th>Address</th>
+                                <th>Contact Number</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>CITY</td>
+                                <td>大洋回国礼品中心</td>
+                                <td>Level 3,750 George st</td>
+                                <td>92115933/0415605478</td>
+                            </tr>
+                            <tr>
+                                <td>CAMPSIE</td>
+                                <td>锦江超市</td>
+                                <td>238 Beamish st</td>
+                                <td>0402870899</td>
+                            </tr>
+                            <tr>
+                                <td>ASHFIELD</td>
+                                <td>华联超市</td>
+                                <td>305 Liverpool rd</td>
+                                <td>0430112818</td>
+                            </tr>
+                            <tr>
+                                <td>BEVERLY HILLS</td>
+                                <td>Hurstville Florist&Gift shop</td>
+                                <td>482 King George rd</td>
+                                <td>95800032</td>
+                            </tr>
+                            <tr>
+                                <td>HURSTVILLE</td>
+                                <td>运通旅行社</td>
+                                <td>Suite 1, level 2, 227 Forest rd</td>
+                                <td>95708122/0438883236</td>
+                            </tr>
+                            <tr>
+                                <td>ROCKDAL</td>
+                                <td>宝臻回国精品</td>
+                                <td>Shop 1,1-5 the seven ways</td>
+                                <td>89590562/0416635686</td>
+                            </tr>
+                            <tr>
+                                <td>CABRAMATTA</td>
+                                <td>茂兴参茸药行</td>
+                                <td>Shop 4/2 Arthur st</td>
+                                <td>97239139</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+<!--                 <div class="tab-content">
+                  <div class="tab-pane active" id="trackItems">home..</div>
+                  <div class="tab-pane" id="uploadPhoto">profile...</div>
+                  <div class="tab-pane" id="findUs">messages...</div>
+                </div>
+ -->			</div>
+        </div>
+  <!-- {{trackid}} -->
+        <!-- End of Left Container
+        ================================================== -->
+
+
+        <!-- Right Container
+        ================================================== -->
+        <div class="span3">
+            <div class="well sidebar-nav">  
+                <div id="myTab">
+                    <div>
+                        <a href="#trackItems" id="onclick">
+                        <h4><i class="icon-screenshot"></i> Track your item</h4>
+                        </a>
+                        <hr class="bs-docs-separator">
+                    </div>
+
+
+                    <div>
+                        <a href="#uploadPhotos">
+                        <h4><i class="icon-picture"></i> Upload Photots</h4>
+                        </a><hr 
+                    </div>
+
+                    <div>
+                        <a href="#findUs">
+                        <h4><i class="icon-globe"></i> Find our subbranchs</h4>
+                        </a>
+                    </div>
+                </div>
+	        </div>
+        </div>
+        <!-- End of Right Container
+        ================================================== -->
+    </div><!--End of row-fluid-->
+
+</div><!-- /.container -->
+  <!-- /END THE FEATURETTES -->
+<script src="../js/track.js"></script> 
+{% endblock %}
