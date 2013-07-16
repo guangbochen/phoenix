@@ -10,6 +10,9 @@ class Home extends CI_Controller {
 		parent::__construct();
 		$this->load->helper(array('form', 'url'));
 	}
+    /** ==================================================
+     ** Application pages
+    ===================================================**/
 
     /**
      * index page
@@ -52,6 +55,15 @@ class Home extends CI_Controller {
     {
         echo twig_render('app_branches.html');
     }
+    /** ==================================================
+     ** Admin 
+    ===================================================**/
+    function admin()
+    {
+        echo twig_render('admin_index.html');
+    }
+
+
 /*
     function upload()
     {$path                    = 'assets/';

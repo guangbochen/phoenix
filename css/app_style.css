@@ -1,0 +1,109 @@
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+/*this add gap between nav. and body content*/
+#Top_Page {
+  height: 60px; 
+}
+
+#brand_font {
+  color:#ffffff; 
+}
+
+/*this defines the background of the marketing_news*/
+.hero-unit {
+  background:url('http://phoenixintlcargo.com.au/public/images_hot/ori/13282271931839.jpg')no-repeat;
+  height: 80px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.marketing_p {
+  color: white; 
+  padding-top: 8px; 
+}
+
+.partingLine {border-top: 5px solid #E4574D;} /*this is a parting line for the company details  */
+ 
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .span4 {
+  
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .span4 p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+.featurette {
+  padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+  overflow: hidden; /* Vertically center images part 2: clear their floats. */
+}
+.featurette-image {
+  margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+}
+
+/* Give some space on the sides of the floated elements so text doesn't run right into it. */
+.featurette-image.pull-left {
+  margin-right: 40px;
+}
+.featurette-image.pull-right {
+  margin-left: 40px;
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+/* Validation Message
+-------------------------------------------------- */
+.myborder {
+border: 1px solid #e2dfda;
+padding: 9px 19px 9px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+/*margin: 0px 0;*/
+position: relative;
+}
+
+.errors {
+padding: 15px 18px 15px 18px;
+margin: 20px 0;
+border: 2px solid #dc1928;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+color: #dc1928;
+}
+.errors ul {
+padding-left: 20px;
+margin: 0;
+}
+#onclick
+{
+  color: #5A5A5A;
+  background-color: #ffffff;
+}
+#map-canvas {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }

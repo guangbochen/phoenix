@@ -39,6 +39,15 @@
 */
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
+//customised application redirection
+$route['index'] = "home/index";
+$route['track'] = "home/track";
+$route['upload'] = "home/upload";
+$route['branches'] = "home/branches";
 
+//customised admin redirection
+$route['admin'] = "home/admin";
+//
+//
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
