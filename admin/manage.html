@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Phoenix admin</title>
+    <meta name="description" content="phoenix international cargo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--basic styles-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+<![endif]-->
+    <!--page specific plugin styles-->
+    <!-- <link rel="stylesheet" href="assets/css/jquery-ui-1.10.3.custom.min.css" /> -->
+    <link rel="stylesheet" href="assets/css/datepicker.css" />
+
+    <!--fonts-->
+    <link rel="stylesheet" href="assets/css/ace-fonts.css" />
+    <!--ace styles-->
+    <link rel="stylesheet" href="assets/css/ace.min.css" />
+    <link rel="stylesheet" href="assets/css/ace-responsive.min.css" />
+    <link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="assets/css/jquery.handsontable.full.css" />
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+<![endif]-->
+    <!--inline styles related to this page-->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a href="#" class="brand">
+                    <small><i class="icon-globe"></i> Phoenix Admin</small>
+                </a><!--/.brand-->
+            </div>
+        </div>
+    </div>
+    <!-- start of body  -->
+    <div class="main-container container-fluid">
+        <a class="menu-toggler" id="menu-toggler" href="#">
+            <span class="menu-text"></span>
+        </a>
+        <div class="sidebar" id="sidebar">
+            <ul class="nav nav-list">
+
+                <li>
+                <a href="index.html">
+                    <i class="icon-home home-icon"></i>
+                    <span class="menu-text"> Home Page </span>
+                </a>
+                </li>
+
+                <li>
+                <a href="generate.html">
+                    <i class="icon-barcode"></i>
+                    <span class="menu-text"> Generate Waybill </span>
+                </a>
+                </li>
+
+                <li>
+                <a href="update.html">
+                    <i class=" icon-cloud-upload"></i>
+                    <span class="menu-text"> Batch Update </span>
+                </a>
+                </li>
+
+                <li class="active">
+                <a href="manage.html">
+                    <i class="icon-th-large"></i>
+                    <span class="menu-text">Manage Waybill </span>
+                </a>
+                </li>
+
+                <li>
+                <a href="check_status.html">
+                    <i class="icon-eye-open"></i>
+                    <span class="menu-text">Check Status </span>
+                </a>
+                </li>
+
+            </ul><!--/.nav-list-->
+
+            <div class="sidebar-collapse" id="sidebar-collapse">
+                <i class="icon-double-angle-left"></i>
+            </div>
+        </div>
+        <!-- END OF NAVBAR
+================================================== -->
+
+        <!-- START OF BODY
+================================================== -->
+        <div class="main-content">
+            <div class="breadcrumbs" id="breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="index.html">Home</a>
+                    <span class="divider">
+                        <i class="icon-angle-right arrow-icon"></i>
+                    </span>
+                    </li>
+                    <li class="active">Manage Waybill</li>
+                </ul><!--.breadcrumb-->
+            </div>
+            <!-- end of navigation bar -->
+
+            <div class="page-content">
+                <div class="span7">
+                    <div class="widget-box collapsed">
+                        <div class="widget-header header-color-blue">
+                            <h5>Searching Express Waybill</h5>
+                            <div class="widget-toolbar">
+                                <a class="toggle-search" data-action="collapse" href="#"><i class="icon-chevron-down"></i> Show</a>
+                            </div>
+                        </div><!--/.widget-header -->
+
+                        <div class="widget-body">
+                            <div class="widget-main">
+                                <!-- FORM SEARCH -->
+                                <form id="search-form">
+                                    <p><i class="icon-exclamation-sign"></i> Notice: Please leave the textbox as blank if no searching value is desired</p>
+                                    <table class="table">
+                                        <tr>
+                                            <td>Tracking ID : </td>
+                                            <td><input type="text" name="tracking_id" class="input-medium" placeholder="Tracking Id"></td>
+                                            <td>Order Date : </td>
+                                            <td>
+                                                <input class="input-medium date-picker" data-date-format="dd/mm/yyyy" type="text" 
+                                                placeholder="dd/mm/yyyy" name="order_date">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Location : </td>
+                                            <td><input type="text" name="location" class="input-medium" placeholder="Location"></td>
+                                            <td>Courier : </td>
+                                            <td><input type="text" name="courier" class="input-medium" placeholder="Courier Name"></td>
+                                        </tr>
+                                        <tr>
+                                            <td> Flight Date: </td>
+                                            <td>
+                                                <input class="input-medium date-picker" data-date-format="dd/mm/yyyy" 
+                                                type="text" placeholder="dd/mm/yyyy" name="flight_date">
+                                            </td>
+                                            <td> Arrival : </td>
+                                            <td><input type="text" name="arrival" class="input-medium" placeholder="Arrival City"></td>
+                                        </tr>
+                                    </table>
+                                    <button type="submit" class="btn btn-primary no-border"><i class="icon-search"></i> Search</button>
+                                    <h4 class="msg orange"></h4>
+                                </form> <!-- END FORM SEARCH -->
+                            </div>
+                        </div><!--/.widget-body -->
+                    </div><!--/.widget-box -->
+                </div> <!-- end of span 7 -->
+
+                <!-- display searching result -->
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="hr hr-18 dotted hr-double"></div>
+                        <h4 class="blue"> 
+                            <i class="icon-th-large"></i> Manage Express Waybills: 
+                            <button id="btn-filter" class="btn btn-danger no-border"><i class="icon-filter"></i> Filter</button>
+                            <button id="btn-display_all" class="btn btn-danger no-border"><i class="icon-folder-open"></i> Display All</button>
+                            <button id="btn-export" class="btn btn-danger no-border"><i class="icon-external-link"></i> Export Excel</button>
+                            <button class="btn btn-inverse no-border" id="btn-save"><i class="icon-save"></i> Save</button>
+                        </h4>
+                    </div>
+                    <div class="clearfix"></div>
+                    <h4 class="orange">
+                        <span id="msg"> </span>
+                    </h4> 
+                    
+                </div> <!-- end of row-fluid -->
+
+                <br/>
+                
+                <!-- UPDATE MODAL -->
+                <div id="modal-append"></div> <!-- This div used to append the modal -->
+                <script id="update-modal-template" type="text/template">
+                <form id="update-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="update-modal-heading"><i class="icon-flag"></i> Update waybill - {{tracking_id}} </h4>
+                        <h4 id="dialog-msg"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <fieldset>
+                            <legend>Waybill Info: </legend>
+                            <input type="hidden" name="id" value="{{id}}" />
+                            <input type="hidden" name="tracking_id" value="{{tracking_id}}" />
+                            <input type="hidden" name="waybill_status" value="{{waybill_status}}" />
+                            <p class="control-group">
+                                <label>Order Date: </label>
+                                <input class="input-medium date-picker" data-date-format="dd/mm/yyyy" type="text" placeholder="dd/mm/yyyy" name="order_date" value="{{order_date}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Flight Date: </label>
+                                <input class="input-medium date-picker" data-date-format="dd/mm/yyyy" type="text" placeholder="dd/mm/yyyy" name="flight_date" value="{{flight_date}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Express Company: </label>
+                                <input type="text" name="courier_name" value="{{courier_name}}" />
+                                <input type="hidden" name="courier_value" value="{{courier_value}}" />
+                                <input type="hidden" name="courier_id" value="{{courier_id}}" />
+                            </p>
+                            <p class="control-group">
+                                <label>Express Number: </label>
+                                <input type="text" name="express_number" value="{{express_number}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Arrival City: </label>
+                                <input type="text" name="city_name" value="{{city_name}}" />
+                                <input type="hidden" name="city_id" value="{{city_id}}" />
+                            </p>
+                            <p class="control-group">
+                                <label>Location: </label>
+                                <input type="text" name="location" value="{{location}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Postage: </label>
+                                <input type="text" name="postage" value="{{postage}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Insurance </label>
+                                <input type="text" name="insurance" value="{{insurance}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Tax: </label>
+                                <input type="text" name="tax" value="{{tax}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Packing Charge: </label>
+                                <input type="text" name="packing_charge" value="{{packing_charge}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Total Price: </label>
+                                <input type="text" name="total_price" value="{{total_price}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Agent Number: </label>
+                                <input type="text" name="agent_number" value="{{agent_number}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Agent Price: </label>
+                                <input type="text" name="agent_price" value="{{agent_price}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Note: </label>
+                                <textarea name="note" class="autosize-transition span4" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 50px;">{{note}}</textarea>
+                            </p>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Sender Info </legend>
+                            <input type="hidden" name="sender_id" value="{{sender_id}}" />
+                            <input type="hidden" name="sender_identity" value="{{sender_identity}}" />
+                            <input type="hidden" name="sender_frontside_photo" value="{{sender_frontside_photo}}" />
+                            <input type="hidden" name="sender_backside_photo" value="{{sender_backside_photo}}" />
+                            <input type="hidden" name="sender_signature_photo" value="{{sender_signature_photo}}" />
+                            <p class="control-group">
+                                <label>Sender Name: </label>
+                                <input type="text" name="sender_name" value="{{sender_name}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Sender Phone: </label>
+                                <input type="text" name="sender_phone" value="{{sender_phone}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Sender Company: </label>
+                                <input type="text" name="sender_company" value="{{sender_company}}"/>
+                            </>
+                            <p class="control-group">
+                                <label>Sender Address: </label>
+                                <input type="text" name="sender_address" value="{{sender_address}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Sender City: </label>
+                                <input type="text" name="sender_city" value="{{sender_city}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Sender State: </label>
+                                <input type="text" name="sender_state" value="{{sender_state}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Sender Country: </label>
+                                <input type="text" name="sender_country" value="{{sender_country}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Sender Postcode: </label>
+                                <input type="text" name="sender_postcode" value="{{sender_postcode}}"/>
+                            </p>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Receiver Info </legend>
+                            <input type="hidden" name="receiver_id" value="{{receiver_id}}" />
+                            <p class="control-group">
+                                <label>Receiver Name: </label>
+                                <input type="text" name="receiver_name" value="{{receiver_name}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Receiver Phone: </label>
+                                <input type="text" name="receiver_phone" value="{{receiver_phone}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Receiver Company: </label>
+                                <input type="text" name="receiver_company" value="{{receiver_company}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Receiver Address: </label>
+                                <input type="text" name="receiver_address" value="{{receiver_address}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Receiver City: </label>
+                                <input type="text" name="receiver_city" value="{{receiver_city}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Receiver State: </label>
+                                <input type="text" name="receiver_state" value="{{receiver_state}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Receiver Country: </label>
+                                <input type="text" name="receiver_country" value="{{receiver_country}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Receiver Postcode: </label>
+                                <input type="text" name="receiver_postcode" value="{{receiver_postcode}}"/>
+                            </p>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Package Info </legend>
+                            <input type="hidden" name="package_id" value="{{package_id}}" />
+                            <p class="control-group">
+                                <label>Original Weight: </label>
+                                <input type="text" name="package_original_weight" value="{{package_original_weight}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Quantity: </label>
+                                <input type="text" name="package_quantity" value="{{package_quantity}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Total Weight: </label>
+                                <input type="text" name="package_total_weight" value="{{package_total_weight}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Claim Value: </label>
+                                <input type="text" name="package_claim_value" value="{{package_claim_value}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Staff Signature: </label>
+                                <input type="text" name="package_staff_signature" value="{{package_staff_signature}}"/>
+                            </p>
+                            <p class="control-group">
+                                <label>Description: </label>
+                                <textarea name="package_description" class="autosize-transition span4" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 50px;">{{package_description}}</textarea>
+                            </p>
+                        </fieldset>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn-close btn btn-inverse no-border" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Close</button>
+                        <button type="submit" class="btn btn-primary no-border"><i class="icon-ok"></i> Update</button>
+                    </div>
+                </form>  <!-- END OF UPDATE MODAL -->
+                </script>
+
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div id="waybills"></div>
+                    </div>
+                </div> <!-- end of display searching result -->
+
+            </div> <!-- end of page content -->
+        </div><!--/.main-content-->
+        <!-- END OF BODY
+================================================== -->
+
+        <!-- FOOTER
+================================================== -->
+    </div><!--/.main-container-->
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-small btn-inverse">
+        <i class="icon-double-angle-up icon-only bigger-110"></i>
+    </a>
+    <!-- END OF FOOTER
+================================================== -->
+    <!--page specific plugin scripts-->
+
+    <!--basic scripts-->
+
+    <!--[if !IE]>-->
+
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+    </script>
+
+    <!--<![endif]-->
+
+    <!--[if IE]>
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+    </script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    </script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+
+    <!--page specific plugin scripts-->
+    <!--[if lte IE 8]>
+    <script src="assets/js/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/jquery.cookie.js"></script>
+    <script src="assets/js/date-time/bootstrap-datepicker.min.js"></script>
+    <script src="assets/js/jquery.maskedinput.min.js"></script>
+
+    <!--ace scripts-->
+    <script src="assets/js/ace-elements.min.js"></script>
+    <script src="assets/js/ace.min.js"></script>
+
+    <!--inline scripts related to this page-->
+    <script>
+    $(function() {
+        $('.date-picker').datepicker().next().on(ace.click_event, function(){
+            $(this).prev().focus();
+        });
+    });
+    </script>
+    <script src="assets/js/jquery.handsontable.full.js"></script>
+    <script src="assets/js/mustache.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/waybill.js"></script>
+    <script src="js/manage.js"></script>
+</body>
+</html>

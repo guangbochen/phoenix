@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Phoenix Admin</title>
+    <meta name="description" content="phoenix international cargo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--basic styles-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+    <![endif]-->
+    <!--page specific plugin styles-->
+    <!--fonts-->
+    <link rel="stylesheet" href="assets/css/ace-fonts.css" />
+    <!--ace styles-->
+    <link rel="stylesheet" href="assets/css/ace.min.css" />
+    <link rel="stylesheet" href="assets/css/ace-responsive.min.css" />
+    <link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+    <![endif]-->
+    <!--inline styles related to this page-->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a href="#" class="brand">
+        <small>
+        <i class="icon-globe"></i>
+        Phoenix Admin
+        </small>
+      </a><!--/.brand-->
+    </div>
+  </div>
+</div>
+
+<!-- start of menu  -->
+<div class="main-container container-fluid">
+  <a class="menu-toggler" id="menu-toggler" href="#">
+    <span class="menu-text"></span>
+  </a>
+  <div class="sidebar" id="sidebar">
+    <ul class="nav nav-list">
+
+      <li>
+        <a href="index.html">
+        <i class="icon-home home-icon"></i>
+        <span class="menu-text"> Home Page </span>
+        </a>
+      </li>
+
+      <li class="active">
+        <a href="generate.html">
+        <i class="icon-barcode"></i>
+        <span class="menu-text"> Generate Waybill </span>
+        </a>
+      </li>
+
+      <li>
+        <a href="update.html">
+        <i class=" icon-cloud-upload"></i>
+        <span class="menu-text"> Batch Update </span>
+        </a>
+      </li>
+
+      <li>
+        <a href="manage.html">
+          <i class="icon-th-large"></i>
+          <span class="menu-text">Manage Waybill </span>
+        </a>
+      </li>
+      <li>
+        <a href="check_status.html">
+          <i class="icon-eye-open"></i>
+          <span class="menu-text">Check Status </span>
+        </a>
+      </li>
+
+    </ul><!--/.nav-list-->
+
+    <div class="sidebar-collapse" id="sidebar-collapse">
+      <i class="icon-double-angle-left"></i>
+    </div>
+  </div>
+<!-- END OF HEADER
+================================================== -->
+
+<!-- START OF BODY
+================================================== -->
+<div class="main-content">
+  <div class="breadcrumbs" id="breadcrumbs">
+     <ul class="breadcrumb">
+        <li>
+           <i class="icon-home home-icon"></i>
+           <a href="index.html">Home</a>
+
+           <span class="divider">
+              <i class="icon-angle-right arrow-icon"></i>
+           </span>
+        </li>
+        <li class="active">Generate Waybill</li>
+     </ul><!--.breadcrumb-->
+  </div>
+  <!-- end of navigation bar  -->
+
+  <div class="page-content">
+    <br>
+    <div class="span5">
+      <div class="widget-box">
+        <!-- generating form title -->
+        <div class="widget-header header-color-orange">
+
+          <h4><i class="icon-spinner orange bigger-125"></i>Generate Express Waybill</h4>
+        </div>
+        <div class="widget-body">
+          <div class="widget-main no-padding">
+          <!-- generating express waybill form -->
+            <form class="form-horizontal" id="generate-waybill-form">
+              <fieldset>
+              <!-- assigned location -->
+                <div class="control-group">
+                  <label class="control-label" for="form-field-1">Assigned Location :</label>
+                  <div class="controls">
+                    <input type="text" placeholder="Location" name="location" value="sydney"/>
+                  </div>
+                </div>
+                <!-- number of generating -->
+                <div class="control-group">
+                  <label class="control-label" for="form-field-1">Begin Number:</label>
+                  <div class="controls">
+                    <input type="text" name="begin_number" placeholder="Max. 999" id="begin_number" value="10"/>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="form-field-1">End Number:</label>
+                  <div class="controls">
+                    <input type="text" name="end_number" placeholder="Max. 999" id="end_number" value="20"/>
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="form-field-1">Format: </label>
+                  <div class="controls">
+                    <input type="text" name="format" placeholder="Format of Waybill" id="format" value="PHE"/>
+                  </div>
+                </div>
+              </fieldset>
+              <!-- submit button -->
+                <div class="center">
+                  <button  class="btn btn-small btn-yellow no-border" type="submit">
+                    Submit <i class="icon-arrow-right icon-on-right bigger-110"></i>
+                  </button>
+                </div>
+                <br>
+            </form> 
+          </div>
+        </div>
+      </div>
+    </div><!-- end of span5 -->
+    <!-- end of generating express waybills -->
+
+  <!-- display generating express waybills notification -->
+    <div class="span7" id="generate-notification">
+        <h3 class="row-fluid header smaller lighter orange">
+            <span class="span7"> <i class="icon-bell-alt"></i> Notifications </span><!--/span--> 
+        </h3> 
+
+    <!-- notification -->
+        <ul id="notifications">
+            <script id="notification-template" type="text/x-handlerbars-template">
+            <li>
+                <p class="text-success">You have generated <strong>{{number_of_waybill}}</strong> waybills on <strong>{{date_created}}</strong> at <strong>{{location}}</strong>, <a href="{{download_link}}">download details</a>.</p>
+            </li>
+            </script>
+            <script id="notify-error" type="text/x-handlerbars-template">
+            <li>
+                <p class="text-error">Waybill <strong>{{tracking_id}}</strong> had already generated. Please consider another range.</p>
+            </li>
+            </script>
+        </ul> <!-- end of notification -->
+
+        <a id="lnk-check-log" href="#logModal" data-toggle="modal">
+            <h4 class="pull-right"> Check full log <i class="icon-leaf green"></i></h4>
+        </a>
+        <!--add log modal-->
+        <div id="logModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 id="logModalLabel"><i class="icon-leaf green"></i> Check my full log</h4>
+            </div>
+            <div class="modal-body">
+                <ul id="logs">
+                    <script id="log-template" type="text/x-handlerbars-template">
+                    {{#each this}}
+                    <li>
+                    <p class="text-info">You generated {{number_of_waybill}} waybills <strong>({{scope}})</strong> on {{date_created}} at {{location}}, <a href="{{download_link}}">download details</a>.</p>
+                    </li>
+                    {{/each}}
+                    </script>
+                </ul>
+            </div>
+            <div class="modal-footer">
+            <button class="btn btn-inverse no-border" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        </div> <!--end of modal-->
+
+    </div> <!-- end of searching express form -->
+
+    </div> <!-- end of page content -->
+</div><!--/.main-content-->
+<!-- END OF BODY
+================================================== -->
+
+<!-- FOOTER
+================================================== -->
+</div><!--/.main-container-->
+<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-small btn-inverse">
+  <i class="icon-double-angle-up icon-only bigger-110"></i>
+</a>
+<!-- END OF FOOTER
+================================================== -->
+<!--page specific plugin scripts-->
+
+    <!--basic scripts-->
+
+      <!--[if !IE]>-->
+
+      <script type="text/javascript">
+         window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+      </script>
+
+      <!--<![endif]-->
+
+      <!--[if IE]>
+    <script type="text/javascript">
+     window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+    </script>
+    <![endif]-->
+
+      <script type="text/javascript">
+         if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+      </script>
+      <script src="assets/js/bootstrap.min.js"></script>
+
+      <!--page specific plugin scripts-->
+
+      <!--[if lte IE 8]>
+        <script src="assets/js/excanvas.min.js"></script>
+      <![endif]-->
+
+    <script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="assets/js/jquery.cookie.js"></script>
+    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+
+    <!--ace scripts-->
+
+    <script src="assets/js/ace-elements.min.js"></script>
+    <script src="assets/js/ace.min.js"></script>
+    <script src="assets/js/jquery.maskedinput.js"></script>
+    <script>
+    $('input[name=begin_number]').mask('?9999999', { placeholder: '' });
+    $('input[name=end_number]').mask('?9999999', { placeholder: '' });
+    </script>
+    <script src="assets/js/handlebars.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/generate.js"></script>
+</body>
+</html>

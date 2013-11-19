@@ -1,0 +1,17 @@
+---
+applications:
+  .:
+    name: phoenix-server
+    framework:
+      name: php
+      info:
+        mem: 128M
+        description: PHP Application
+        exec: 
+    infra: aws
+    url: ${name}.${target-base}
+    mem: '128'
+    instances: 1
+    services:
+      mysql-99e6e:
+        type: mysql

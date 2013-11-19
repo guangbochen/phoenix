@@ -1,0 +1,8 @@
+{
+    "require": {
+        "slim/slim": "2.*",
+        "gabordemooij/redbean": "dev-master",
+        "codeplex/phpexcel": "dev-master",
+        "tpyo/amazon-s3-php-class": "dev-master"
+    }
+}

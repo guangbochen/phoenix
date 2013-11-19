@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Phoenix admin</title>
+    <meta name="description" content="phoenix international cargo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--basic styles-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+    <![endif]-->
+    <!--page specific plugin styles-->
+    <!-- <link rel="stylesheet" href="assets/css/jquery-ui-1.10.3.custom.min.css" /> -->
+    <link rel="stylesheet" href="assets/css/datepicker.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-editable.css" />
+
+    <!--fonts-->
+    <link rel="stylesheet" href="assets/css/ace-fonts.css" />
+    <!--ace styles-->
+    <link rel="stylesheet" href="assets/css/ace.min.css" />
+    <link rel="stylesheet" href="assets/css/ace-responsive.min.css" />
+    <link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+    <![endif]-->
+    <!--inline styles related to this page-->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- NAVBAR
+================================================== -->
+  <!--/.brand-->
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a href="#" class="brand">
+          <small>
+          <i class="icon-globe"></i>
+          Phoenix Admin
+          </small>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- left side menu bar  -->
+  <div class="main-container container-fluid">
+    <a class="menu-toggler" id="menu-toggler" href="#">
+      <span class="menu-text"></span>
+    </a>
+    <div class="sidebar" id="sidebar">
+      <ul class="nav nav-list">
+        <li>
+          <a href="index.html">
+            <i class="icon-home home-icon"></i>
+            <span class="menu-text"> Home Page </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="generate.html">
+            <i class="icon-barcode"></i>
+            <span class="menu-text"> Generate Waybill </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="update.html">
+            <i class=" icon-cloud-upload"></i>
+            <span class="menu-text"> Update Status </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="manage.html">
+            <i class="icon-th-large"></i>
+            <span class="menu-text">Manage Waybill </span>
+          </a>
+        </li>
+
+        <li class="active">
+          <a href="check_status.html">
+            <i class="icon-eye-open"></i>
+            <span class="menu-text">Check Status </span>
+          </a>
+        </li>
+
+      </ul><!--/.nav-list-->
+
+      <div class="sidebar-collapse" id="sidebar-collapse">
+        <i class="icon-double-angle-left"></i>
+      </div>
+  </div>
+<!-- END OF NAVBAR
+================================================== -->
+
+<!-- START OF BODY
+================================================== -->
+<div class="main-content">
+  <div class="breadcrumbs" id="breadcrumbs">
+     <ul class="breadcrumb">
+        <li>
+           <i class="icon-home home-icon"></i>
+           <a href="index.html">Home</a>
+           <span class="divider">
+              <i class="icon-angle-right arrow-icon"></i>
+           </span>
+        </li>
+        <li class="active">Check Status</li>
+     </ul><!--.breadcrumb-->
+  </div>
+  <!-- end of navigation bar -->
+
+  <div class="page-content">
+    <div class="span7">
+    <div class="widget-box collapsed">
+    <!-- <div class="widget-box"> -->
+       <div class="widget-header header-color-blue">
+         <h5>Searching Express Waybill</h5>
+         <div class="widget-toolbar">
+          <a data-action="collapse" href="#"><i class="icon-chevron-down"></i> Show</a>
+         </div>
+       </div><!--/.widget-header -->
+ 
+       <div class="widget-body">
+        <div class="widget-main">
+            <!-- FORM SEARCH -->
+            <form id="search-form">
+                <p><i class="icon-exclamation-sign"></i> Notice: Please leave the textbox as blank if no searching value is desired</p>
+                <table class="table">
+                    <tr>
+                        <td>Tracking ID : </td>
+                        <td><input type="text" name="tracking_id" class="input-medium" placeholder="Tracking Id"></td>
+                        <td>Order Date : </td>
+                        <td>
+                            <input class="input-medium date-picker" data-date-format="dd/mm/yyyy" type="text" 
+                            placeholder="dd/mm/yyyy" name="order_date">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Location : </td>
+                        <td><input type="text" name="location" class="input-medium" placeholder="Location"></td>
+                        <td>Courier : </td>
+                        <td><input type="text" name="courier" class="input-medium" placeholder="Courier Name"></td>
+                    </tr>
+                    <tr>
+                        <td> Flight Date: </td>
+                        <td>
+                            <input class="input-medium date-picker" data-date-format="dd/mm/yyyy" 
+                            type="text" placeholder="dd/mm/yyyy" name="flight_date">
+                        </td>
+                        <td> Arrival : </td>
+                        <td><input type="text" name="arrival" class="input-medium" placeholder="Arrival City"></td>
+                    </tr>
+                </table>
+                <button type="submit" class="btn btn-primary no-border"><i class="icon-search"></i> Search</button>
+                <h4 class="msg orange"></h4>
+            </form> <!-- END FORM SEARCH -->
+        </div>
+       </div><!--/.widget-body -->
+    </div><!--/.widget-box -->
+    </div> <!-- end of span 7 -->
+
+    <!-- display searching result -->
+    <div class="row-fluid">
+    <div class="span12">
+      <div class="hr hr-18 dotted hr-double"></div>
+      <h3 class="row-fluid header smaller lighter blue">
+        <i class="icon-eye-open" id="eye_icon"></i> Check Waybill Status
+        <button class="btn btn-danger no-border" id="batch_check_status"><i class="icon-cloud-download"></i> Synchronize Status</button>
+        <button class="btn btn-inverse no-border" id="refresh"><i class="icon-refresh"></i> Refresh</button>
+      </h3>
+    </div>
+  </div> <!-- end of row-fluid -->
+  <div class="row-fluid">
+      <div class="span12">
+        <table id="myTable" class="table table-striped table-bordered table-hover"> 
+          <thead>
+          <tr>
+            <th>Tracking ID</th>
+            <th>Sender</th>
+            <th>Order Date</th>
+            <th>Location</th>
+            <th>Express Company</th>
+            <th>Express Number</th>
+            <th>Local Status</th>
+            <th>Tracking Status</th>
+          </tr>
+          </thead>
+          <tbody id="waybills">
+            <script id="waybill-template" type="text/x-handlerbars-template">
+            {{#each this}}
+              <tr> 
+                <td>
+                  <a href="#statusModal" data-toggle="modal" class="row-tracking-id">{{tracking_id}}</a>
+                </td>
+                <td>{{sender_name}}</td>
+                <td>{{order_date}}</td>
+                <td>{{location}}</td>
+                <td><a href="#" data-tracking-id="{{tracking_id}}" data-courier-value="{{courier_value}}" class="row-courier-name editable editable-click editable-empty" id="cname_{{tracking_id}}">{{courier_name}}</a></td>
+                <td><a href="#" data-tracking-id="{{tracking_id}}" class="row-express-number editable editable-click editable-empty" id="enum_{{tracking_id}}">{{express_number}}</a></td>
+                <td>
+                 {{#each statuses}}
+                    Time: {{time}} <br>
+                    Description: {{context}} <br>
+                 {{/each}}
+                </td>
+                <td> 
+                  <a href="#" data-tracking-id="{{tracking_id}}" class="row-waybill-status editable editable-click editable-empty" id="st_{{tracking_id}}">{{waybill_status}}</a>
+                </td>
+              </tr>
+            {{/each}}
+            </script>
+          </tbody>
+        </table>
+      </div>
+  </div> <!-- end of display searching result -->
+
+   <!-- status modal to get postal api data  -->
+   <div id="statusModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="close_check_status">×</button>
+         <h4 id="statusModalLabel"><i class="icon-eye-open"></i> Check Waybill Status</h4>
+      </div>
+      <div class="modal-body">
+         <!-- display waybill status -->
+         <table class="table table-condensed">
+            <tr class="warning">
+              <td>Tracking ID:</td>
+              <td>Express Company:</td>
+              <td>Express Number:</td>
+            </tr>
+            <tr>
+              <td><label id="get_tracking_id"></label></td>
+              <td><label id="get_courier_name"></label></td>
+              <td><label id="get_express_number"></label></td>
+            </tr>
+         </table>
+            <!--Display tracking details  -->
+            <div class="alert alert-info"> China Tracking Details :<br> </div>
+            <div id="postal_api_status"></div>
+            <div id="postal_api_tracking">
+            </div>
+      </div>
+      <div class="modal-footer">
+         <button class="btn btn-inverse no-border" data-dismiss="modal" aria-hidden="true" class="close" id="close_check_status">Close</button>
+      </div>
+      </div> <!-- end of status modal -->
+
+  </div> <!-- end of page content -->
+</div><!--/.main-content-->
+<!-- END OF BODY
+================================================== -->
+
+<!-- FOOTER
+================================================== -->
+</div><!--/.main-container-->
+<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-small btn-inverse">
+  <i class="icon-double-angle-up icon-only bigger-110"></i>
+</a>
+<!-- END OF FOOTER
+================================================== -->
+<!--page specific plugin scripts-->
+
+    <!--basic scripts-->
+
+    <!--[if !IE]>-->
+
+    <script type="text/javascript">
+       window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+    </script>
+
+    <!--<![endif]-->
+
+    <!--[if IE]>
+    <script type="text/javascript">
+     window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+    </script>
+    <![endif]-->
+
+    <script type="text/javascript">
+       if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    </script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+
+    <!--page specific plugin scripts-->
+    <!--[if lte IE 8]>
+    <script src="assets/js/excanvas.min.js"></script>
+
+    <![endif]-->
+    <script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="assets/js/date-time/bootstrap-datepicker.min.js"></script>
+    <script src="assets/js/jquery.maskedinput.min.js"></script>
+
+    <!--ace scripts-->
+    <script src="assets/js/ace-elements.min.js"></script>
+    <script src="assets/js/ace.min.js"></script>
+    <script src="assets/js/x-editable/bootstrap-editable.min.js"></script>
+    <script src="assets/js/x-editable/ace-editable.min.js"></script>
+
+    <!--inline scripts related to this page-->
+    <script>
+    $(function() {
+        $('.date-picker').datepicker().next().on(ace.click_event, function(){
+            $(this).prev().focus();
+        });
+    });
+    </script>
+    <script src="assets/js/jquery.cookie.js"></script>
+    <script src="assets/js/handlebars.js"></script>
+    <script src="js/app.js" type="text/javascript"> </script>
+    <script src="js/waybill.js" type="text/javascript"> </script>
+    <script src="js/check_status.js" type="text/javascript"> </script>
+    <script src='js/tablesort.min.js'></script>
+    <script>
+      new Tablesort(document.getElementById('myTable'));
+    </script>
+</body>
+</html>

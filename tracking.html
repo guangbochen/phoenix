@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome to Phoenix</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width"> 
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+    <link href="css/app_style.css" rel="stylesheet">
+</head>
+<body>
+<!-- NAVBAR -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div id="navigator">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="index">
+                <div id="brand_font"> Phoenix International Express</div>
+            </a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><a href="index.html">Express Services</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="upload.html">Upload Photo</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="branches.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> <!-- END OF NAVBAR -->
+
+<!-- main container -->
+<div class="container">
+    <div class="span8">
+          <div class="myborder">
+           <!-- Track your items -->
+            <p><a href="index">Home</a> > Track your item</p>
+            <hr>
+            <h1>Track your item</h1>
+            <p>Please enter your tracking number. </p>
+            <!-- validation message -->
+            <div class="validation" style="display: none;" id="validation">
+              <ul><li>empty tracking id or phone number</li></ul>
+            </div>
+            <!-- tracking id submission form -->
+            <form id="tracking_form">
+              <div class="control-group" id="errorInput">
+                  <!-- <textarea rows="2" class="field span4 " id="tracking_id" placeholder="Tracking number..." name="tracking_id">phe0000001au</textarea> -->
+                  <p><Strong>Tracking ID: </Strong></p>
+                  <input type="text" name="tracking_id" placeholder="Enter tracking id" id="tracking_id" />
+                  <p><Strong>Phone Number : </Strong></P>
+                  <input type="text" name="phone_number" placeholder="Enter Phone Number"id="phone_number" />
+                  <p>
+                  <button type="submit" class="btn btn-danger">Submit</button>
+                  </p>
+              </div>
+            </form>
+            <!-- display tracking result -->
+            <div id="tracking_summary" style="display: none;">
+            <h4>Searching Result: </h4>
+                <table class="table table-condensed">
+                  <tr>
+                  <th>Tracking ID:</th>
+                  <th>Status:</th>
+                  </tr>
+                  <tr>
+                  <td id="get_id"></td>
+                  <td id="get_status"></td>
+                  </tr>
+                </table>
+                <!-- display validation message -->
+                <div id="waybill-tracking-details">
+               </div>
+               <!-- display tracking result -->
+               <div id="postal_api_summary" style="display: none;">
+                <!-- <iframe id="postal_api" src="" width="535" height="270" type="text/html"
+                 marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no">
+                </iframe> -->
+            </div>
+            </div> <!-- end of tracking result  -->
+          </div> <!-- end of my border -->
+    </div> <!-- end of span8 -->
+
+    <!-- SIDEBAR -->
+    <div class="span3 well">
+        <p>
+            <a href="tracking.html">
+                <h4><i class="icon-screenshot"></i> Track your item</h4>
+            </a>
+            <hr class="bs-docs-separator">
+        </p>
+
+        <p>
+            <h4><i class="icon-picture"></i> Upload photos</h4>
+            <hr>
+        </p>
+
+        <p>
+            <a href="branches.html"j>
+                <h4><i class="icon-globe"></i> Find our branches</h4>
+            </a>
+        </p>
+    </div> <!-- END SIDEBAR -->
+</div><!-- /.container -->
+
+<!-- FOOTER -->
+<hr class="featurette-divider">
+<footer>
+  <p>&copy; 2013 PHOENIX INTERNATIONAL CARGO PTY LTD. &nbsp;&nbsp; <a href="#">Terms of Use</a> &#124; <a href="#">Privacy</a></p>
+  </footer> <!-- END OF FOOTER -->
+<!-- END OF FOOTER -->
+
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+   <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+   <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+   <script src="js/main.js"></script>
+   <script src="js/trackItems.js"></script>
+</body>
+</html>

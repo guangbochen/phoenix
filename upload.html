@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome to Phoenix</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width"> 
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap-fileupload.min.css" rel="stylesheet">
+    <link href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+    <link href="css/app_style.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- BLACK OUT THE SCREEN WHEN UPLOAD IS DISPLAYED -->
+    <div id="overlay"></div>
+
+    <!-- NAVBAR -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div id="navigator">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="index.html">
+                    <div id="brand_font"> Phoenix International Express</div>
+                </a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li><a href="index.html">Express Services</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="upload.html">Upload Photo</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="branches.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> <!-- END OF NAVBAR -->
+
+    <!-- CONTAINER -->
+    <div class="container">
+        <div class="span8">
+            <div class="myborder">
+                <!-- Upload Photos -->
+                <p><a href="index">Home</a> &gt; Upload Photos</p>
+                <hr>
+                <h1>Upload Photos</h1>
+                <h4>Dear Customer</h4>
+                <p>Please fill in the following information and remains consistent with the identity photo you upload.</p>
+                <form id="upload-form">
+                    <p>
+                        <strong>Tracking ID: </strong> 
+                        <input type="text" class="form-control" id="input-error" name="tracking_id" placeholder="Enter tracking id"/>
+                        <img class="load" src="img/loading.gif"/>
+                        <input type="hidden" name="sender_id"/>
+                    </p>
+                    <p>
+                        <strong>Identity No: </strong> 
+                        <input type="text" name="identity" placeholder="Enter identity number"/>
+                    </p>
+
+                    <hr/>
+                    <h4 class="text-info">Upload your identity photo: 
+                        <span data-label='front' class="photo-type cursor act-danger">Front Side</span> - 
+                        <span data-label='back' class="photo-type cursor act-danger">Back Side</span> - 
+                        <span data-label='signature' class="photo-type cursor act-danger">Signature</span>
+                    </h4>
+                    <br/>
+
+                    <!-- PHOTO UPLOADER -->
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                        <strong id="label-photo-type">Front Side: </strong>
+                        <div class="input-append">
+                            <div class="uneditable-input span3"> <i class="icon-file fileupload-exists"></i> <span class="fileupload-preview"></span> </div> <span class="btn btn-file"> <span class="fileupload-new">Select file</span> <span class="fileupload-exists">Change</span> <input type="file" /> </span> <a href="#" id="remove-preview" class="btn btn-warning fileupload-exists" data-dismiss="fileupload"><i class="icon-remove"></i> Remove</a>
+                        </div>
+                    </div> <!-- END OF PHOTO UPLOADER -->
+                    
+                    <!-- PHOTO PREVIEW -->
+                    <div id="photo-preview">
+                        <img width="240" height="240" src=""/>
+                        <input type="hidden" name="photo_value" id="photo-value" value=""/>
+                        <input type="hidden" name="photo_type" id="photo-type" value="front"/>
+                    </div> <!-- END OF PHOTO PREVIEW -->
+
+                    <button type="submit" class="btn btn-inverse">
+                        <i class="icon-cloud-upload"></i>
+                        Upload
+                    </button>
+                    
+                    <br/><br/>
+                    <h4 id="msg"></h4>
+                </form>
+            </div>
+
+            <!-- UPLOAD FORM MODAL -->
+            <div class="profile-avatar-modal">
+                <div class="modal-content">
+
+                    <!-- modal header -->
+                    <div class="modal-header">
+                        <h3 class="modal-title">Position and size your photo</h3>
+                    </div> <!-- end of modal header -->
+
+                    <!-- modal body -->
+                    <div class="modal-body">
+                        <div class="crop-zone cropper-avatar-size">
+                            <div class="cropper-mask">
+                                <div class="cropper-overlay"></div>
+                                <img class="crop-image" id="crop-image" alt="[Opp ! No image selected]" />
+                            </div>
+                        </div> 
+                        <div class="cropper-slider-outer">
+                            <i class="image-gray"></i>
+                            <div class="cropper-slider"></div>
+                            <i class="image-gray-large"></i>
+                        </div>
+                    </div> <!-- end of modal body -->
+
+                    <!-- modal footer -->
+                    <form class="modal-footer">
+                        <button class="pull-left btn btn-inverse btn-rotate" type="button">
+                            <i class="icon-rotate-right"></i>
+                            Rotate
+                        </button>
+                        <button class="btn profile-image-cancel" type="button" data-dismiss="fileupload">
+                            Cancel
+                        </button>
+                        <button class="btn btn-primary profile-image-save" type="submit">
+                            <i class="icon-ok-sign"></i>
+                            Apply
+                        </button>
+                    </form> <!-- end of modal footer -->
+                </div> <!-- end of modal content -->
+            </div> <!-- end of modal -->
+        </div> <!-- END OF CONTENT -->
+
+        <!-- SIDEBAR -->
+        <div class="span3 well">
+            <p>
+                <a href="tracking.html">
+                    <h4><i class="icon-screenshot"></i> Track your item</h4>
+                </a>
+                <hr class="bs-docs-separator">
+            </p>
+
+            <p>
+                <h4><i class="icon-picture"></i> Upload photos</h4>
+                <hr>
+            </p>
+
+            <p>
+                <a href="branches.html"j>
+                    <h4><i class="icon-globe"></i> Find our branches</h4>
+                </a>
+            </p>
+        </div> <!-- END SIDEBAR -->
+
+    </div><!-- END OF CONTAINTER -->
+
+    <!-- FOOTER -->
+    <hr class="featurette-divider">
+    <footer>
+        <p>&copy; 2013 PHOENIX INTERNATIONAL CARGO PTY LTD. &nbsp;&nbsp; <a href="#">Terms of Use</a> &#124; <a href="#">Privacy</a></p>
+    </footer> <!-- END OF FOOTER -->
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-fileupload.min.js"></script>
+    <script src="js/jquery.rotate.min.js"></script>
+    <script src="//code.createjs.com/easeljs-0.6.1.min.js"></script>
+    <script src="js/html2canvas.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/upload.js"></script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+/************************** GLOBAL ********************************/
+body {
+  color: #5a5a5a;
+
+}
+#brand_font {
+    color: #FFFFFF;
+}
+.container {
+    margin-top: 70px;
+}
+.cursor {
+    cursor: pointer;
+}
+
+/**
+ * this defines the background of the marketing_news
+ */
+.hero-unit {
+    background:url('http://phoenixintlcargo.com.au/public/images_hot/ori/13282271931839.jpg')no-repeat;
+    height: 80px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.marketing_p {
+    color: white; 
+    padding-top: 8px; 
+}
+
+.partingLine {border-top: 5px solid #E4574D;} /*this is a parting line for the company details  */
+ 
+/* Center align the text within the three columns below the carousel */
+.marketing .span4 {
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .span4 p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+.featurette {
+    padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+    overflow: hidden; /* Vertically center images part 2: clear their floats. */
+}
+.featurette-image {
+    margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+}
+
+/* Give some space on the sides of the floated elements so text doesn't run right into it. */
+.featurette-image.pull-left {
+    margin-right: 40px;
+}
+.featurette-image.pull-right {
+    margin-left: 40px;
+}
+/* Thin out the marketing headings */
+.featurette-heading {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+.featurette p {
+    font-size: 19px;
+}
+
+/* css for index page <<<
+-------------------------------------------------- 
+  >>>  css for tracking, upload photos and subbranches page */
+
+/**
+ * border for the left container
+ */
+.myborder {
+    border: 1px solid #e2dfda;
+    padding: 9px 19px 9px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    /*margin: 0px 0;*/
+    position: relative;
+}
+
+/************************************ FOOTER **********************************************/
+footer {
+    width: 940px;
+    margin: 30px auto;
+}
+footer p {
+    text-align: right;
+}
+
+/************************************ NAVIGATOR **********************************************/
+#navigator {
+    width: 940px;
+    margin: 0 auto;
+}
+
+/************************************* UPLOAD FORM ***************************************************/
+
+/* Dim out the screen when the upload modal is displayed */
+#overlay {
+    background-color: rgb(119, 119, 119);
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1005px;
+    z-index: 1;
+    display: none;
+}
+
+#upload-form {
+    margin-top: 30px;
+}
+#upload-form strong {
+    float: left;
+    margin-top: 5px; 
+    width: 110px;
+}
+#upload-form .load{
+    display: none;
+}
+
+/***************************************** EDIT PHOTO MODAL ********************************************/
+#photo-preview {
+    margin: 10px 0 20px;
+    position: relative;
+}
+#photo-preview img {
+    border: 5px solid #E5E5E5;
+    display: none;
+}
+
+/***************************************** EDIT PHOTO MODAL ********************************************/
+.profile-avatar-modal {
+	width: 350px;
+	position: absolute;
+	top: 50px;
+	left: 545px;
+    display: none;
+    z-index: 2;
+}
+
+.modal-content {
+    background-clip: padding-box;
+    background-color: #FFFFFF;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    position: relative;
+}
+i, .icon {
+    background-image: url("https://abs.twimg.com/a/1372759208/t1/img/twitter_web_sprite_icons.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: text-top;
+}
+
+.modal-header {
+    background-color: #ECECEC;
+    background-image: linear-gradient(top , #F5F5F5 0px, #ECECEC 100%);
+    background-image: -moz-linear-gradient(top , #F5F5F5 0px, #ECECEC 100%);
+    background-image: -o-linear-gradient(top , #F5F5F5 0px, #ECECEC 100%);
+    background-image: -webkit-linear-gradient(top, #f5f5f5 0,#ececec 100%);
+    background-repeat: repeat-x;
+    border-bottom: 1px solid #DDDDDD;
+    border-radius: 6px 6px 0 0;
+    box-shadow: 0 1px 0 #FFFFFF inset;
+    cursor: move;
+    padding-bottom: 8px;
+    padding-top: 8px;
+} 
+
+.modal-header .modal-title {
+    color: #555555;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-shadow: 0 1px 0 #FFFFFF;
+    white-space: nowrap;
+    width: 75%;
+}
+
+.modal-header, .modal-footer, .modal-body {
+    padding: 15px;
+}
+
+.crop-zone.cropper-avatar-size {
+    width: 320px;
+}
+.crop-zone {
+    float: left;
+}
+
+div.cropper-avatar-size .cropper-mask:after, .cropper-header-size .cropper-mask:after {
+    box-shadow: 0 0 0 40px white inset, 0 0 0 41px rgba(0, 0, 0, 0.1) inset, 0 0 20px 41px rgba(0, 0, 0, 0.2) inset;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 5999;
+}
+
+.cropper-avatar-size .cropper-mask {
+    height: 320px;
+    width: 320px;
+}
+.cropper-mask {
+    overflow: hidden;
+    position: relative;
+}
+
+.cropper-overlay {
+    position: relative;
+    cursor: move;
+    height: 320px;
+    width: 320px;
+    z-index: 6001;
+    left: 0;
+    top: 0;
+}
+
+.crop-image {
+    top: -280px;
+    left: 5px;
+    display: block;
+    position: relative;
+    max-width: none;
+    height: 240px;
+    width: 310px;
+}
+.cropper-slider-outer {
+    margin: 10px auto;
+    width: 270px;
+}
+.cropper-slider-outer .image-gray {
+    margin-top: 3px;
+}
+.image-gray {
+    background-position: -40px -900px;
+    height: 12px;
+    width: 15px;
+}
+.cropper-slider-outer .image-gray-large {
+    margin-top: 1px;
+}
+.image-gray-large {
+    background-position: -60px -900px;
+    height: 16px;
+    width: 19px;
+}
+.cropper-slider {
+    background: #EEEEEE !important;
+    border: 0 none;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15) inset;
+    display: inline-block;
+    height: 7px;
+    margin: 0 10px;
+    width: 207px;
+}
+.cropper-slider .ui-slider-handle {
+    background: linear-gradient(to bottom, #FFFFFF 0px, #E0E0E0 100%) repeat scroll 0 0 transparent;
+    border-radius: 32px 32px 32px 32px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    height: 16px;
+    width: 16px;
+}
+
+.modal-footer {
+    border-top: 1px solid #DDDDDD;
+    text-align: right;
+}
+
+.modal-footer .btn {
+    margin-left: 5px;
+}
+
+/****************************************** END CROP ZONE ******************************************/
+
+
+/************************************ TRACKING VALIDATION **********************************************/
+.validation {
+    padding: 9px 17px 0px 15px;
+    width: 46%;
+    margin: 10px 0;
+    border: 2px solid #dc1928;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: #dc1928;
+}
+.label {
+    font-size: 14px;
+    padding: 5px;
+}

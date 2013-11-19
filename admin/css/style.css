@@ -1,0 +1,92 @@
+/*css for the generate page*/
+.pull-right {
+  padding-right: 30px !important;
+}
+.inline {
+    display: inline;
+}
+
+ul li:nth-last-child(n+11) {display: none;}
+
+/****************************************** UPDATE WAYBILL MODAL ******************************************/
+#update-modal .modal-body label,
+#update-search-modal .modal-body label {
+    float: left;
+    width: 140px;
+}
+#update-modal legend,
+#update-search-modal legend {
+    margin: 1em 3em;
+    padding: 0 .5em;
+    color: #036;
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 10px;
+    border: 0;
+    display: inline;
+    width: auto;
+    background-color: #fff;
+    position: relative;
+}
+#update-modal fieldset,
+#update-search-modal fieldset {
+    padding: 0 30px !important;
+    border: 1px solid #888;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+    margin-bottom: 25px;
+}
+
+/****************************************** UPDATE EXPRESS COMPANY MODAL ******************************************/
+#update-express-modal label {
+    float: left;
+    width: 150px;
+    margin-top: 5px;
+}
+/****************************************** css for check_status.html ******************************************/
+th.sort-header {
+  cursor:pointer;
+  }
+th.sort-header::-moz-selection,
+th.sort-header::selection {
+  background:transparent;
+  }
+table th.sort-header:after {
+  content:'';
+  float:right;
+  margin-top:7px;
+  border-width:0 4px 4px;
+  border-style:solid;
+  border-color:#404040 transparent;
+  visibility:hidden;
+  }
+table th.sort-header:hover:after {
+  visibility:visible;
+  }
+table th.sort-up:after,
+table th.sort-down:after,
+table th.sort-down:hover:after {
+  visibility:visible;
+  opacity:0.4;
+  }
+table th.sort-up:after {
+  border-bottom:none;
+  border-width:4px 4px 0;
+  }
+
+.col-edit {
+    line-height: 30px;
+    color: #2E7DD2;
+    font-size: 1.1em;
+    margin: 0 5px;
+}
+
+/***************** SEARCH FORM *****************/
+#search-form {
+    position: relative;
+}
+#search-form .msg {
+    position: absolute;
+    bottom: 5px; left: 120px;
+}
